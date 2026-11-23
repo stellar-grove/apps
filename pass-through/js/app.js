@@ -144,7 +144,7 @@
         <div class="tile"><div class="sv">${(GS.dir * wk(2)).toFixed(0)}¢</div><div class="sl">At the pump after 2 weeks</div></div>
         <div class="tile"><div class="sv">${(GS.dir * lr).toFixed(0)}¢</div><div class="sl">At the pump in the long run</div></div>
         <div class="tile ${GS.dir > 0 ? "bad" : "good"}"><div class="sv">${usd(GS.dir * lr * GS.gal / 100)}</div><div class="sl">Per ${GS.gal}-gallon fill-up, once it's all through</div></div>
-        <div class="tile"><div class="sv">p = ${G.pAsym.toFixed(2)}</div><div class="sl">Rises vs falls, first four weeks: not statistically different</div></div>
+        <div class="tile"><div class="sv">p = ${(Math.round(G.pAsym * 100) / 100).toFixed(2)}</div><div class="sl">Rises vs falls, first four weeks: not statistically different</div></div>
       </div>
       <section class="card"><h3>Week by week: rises vs falls</h3><div class="chart"><canvas id="gChart"></canvas></div>
         <table class="tbl"><thead><tr><th>Weeks after</th>${[1, 2, 4, 8, 12].map((k) => `<th class="num">${k}</th>`).join("")}</tr></thead><tbody>
@@ -158,7 +158,7 @@
       y: { label: "Change at the pump (¢ a gallon)", hoverDecimals: 1, unit: "¢" },
       layers: [{ name: `Crude rises $${GS.move}`, x: w, y: up, color: C.terra, width: GS.dir > 0 ? 3 : 1.8 },
                { name: `Crude falls $${GS.move} (shown as size)`, x: w, y: dn, color: C.navy, width: GS.dir < 0 ? 3 : 1.8 }],
-      hlines: [{ y: lr, color: C.brass, label: "long run " + lr.toFixed(0) + "¢" }] });
+      hlines: [{ y: lr, color: C.brass, label: "long run " + lr.toFixed(0) + "¢", left: true }] });
     const xs = G.dates.map((d) => +d.slice(0, 4) + (+d.slice(5, 7) - 1) / 12 + (+d.slice(8, 10) - 1) / 365);
     const ticks = []; for (let y = 2005; y <= Math.floor(xs[xs.length - 1]); y += 5) ticks.push(y);
     new Plot($("#gHist")).set({ x: { min: 2005, max: xs[xs.length - 1] + 0.1, ticks, plain: true, hoverLabel: "Year", hoverDecimals: 2 },

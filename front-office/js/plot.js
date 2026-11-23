@@ -182,7 +182,7 @@ class Plot {
     if (r.label) {
       ctx.font = "600 11px Montserrat, system-ui, sans-serif"; ctx.fillStyle = r.color || SG.navy;
       if (dir === "v") { const x = this.sx(r.x); const right = x > (b.l + b.r) / 2; ctx.textAlign = right ? "right" : "left"; ctx.fillText(r.label, x + (right ? -5 : 5), b.t + 10 + (r.row || 0) * 15); }
-      else { ctx.textAlign = "right"; ctx.fillText(r.label, b.r - 4, this.sy(r.y) - 9); }
+      else { ctx.textAlign = r.left ? "left" : "right"; ctx.fillText(r.label, r.left ? b.l + 4 : b.r - 4, this.sy(r.y) + (r.below ? 13 : -9)); }
     }
   }
 
