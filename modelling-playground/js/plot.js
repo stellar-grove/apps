@@ -82,7 +82,8 @@ class Plot {
     ctx.clearRect(0, 0, w, h);
     if (!s) return;
     const narrow = w < 520;
-    this.box = { l: narrow ? 46 : 60, r: w - 14, t: 14, b: h - (narrow ? 40 : 46) };
+    const l0 = narrow ? 46 : 60, legRows = this.legendRows(l0, w - 14);
+    this.box = { l: l0, r: w - 14, t: legRows ? 10 + legRows * 20 + 6 : 14, b: h - (narrow ? 40 : 46) };
     const b = this.box;
     ctx.font = "12px Montserrat, system-ui, sans-serif";
     ctx.textBaseline = "middle";
@@ -191,19 +192,25 @@ class Plot {
     }
   }
 
+  // Legend sits above the plot area (never over the data); rows wrap to the chart width.
+  legendRows(l, r) {
+    const items = ((this.spec && this.spec.layers) || []).filter((L) => L.name);
+    if (!items.length) return 0;
+    const ctx = this.ctx; ctx.font = "500 12px Montserrat, system-ui, sans-serif";
+    let rows = 1, x = l;
+    items.forEach((L) => { const wd = ctx.measureText(L.name).width + 30; if (x + wd > r && x > l) { rows++; x = l; } x += wd; });
+    return rows;
+  }
+
   legend() {
     const items = (this.spec.layers || []).filter((L) => L.name);
     if (!items.length) return;
     const ctx = this.ctx, b = this.box;
     ctx.font = "500 12px Montserrat, system-ui, sans-serif"; ctx.textAlign = "left";
-    let x = b.l + 10, y = b.t + 12;
-    const wmax = b.r - b.l - 20;
+    let x = b.l, y = 14;
     const widths = items.map((L) => ctx.measureText(L.name).width + 30);
-    const total = widths.reduce((a, v) => a + v, 0);
-    ctx.fillStyle = "rgba(255,255,255,.88)";
-    ctx.fillRect(x - 6, y - 10, Math.min(total, wmax) + 6, (total > wmax ? 2 : 1) * 20);
     items.forEach((L, i) => {
-      if (x + widths[i] > b.l + 10 + wmax) { x = b.l + 10; y += 20; }
+      if (x + widths[i] > b.r && x > b.l) { x = b.l; y += 20; }
       ctx.strokeStyle = L.color || SG.series[0]; ctx.fillStyle = ctx.strokeStyle; ctx.lineWidth = 3;
       ctx.setLineDash(L.dash ? [5, 3] : []);
       if (L.kind === "points" || L.kind === "bars") ctx.fillRect(x, y - 4, 14, 8);
