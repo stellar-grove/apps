@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Growing Season Planner · Stellar Grove</title>
+  <meta name="description" content="Plan a growing season: when to plant so the crop flowers before the heat, how much shade solar panels cost, whether more bees would pay, and what intercrops and cover crops do, from Songrove Botanicals' case studies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400&display=swap" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../">Stellar Grove <span>·</span> Prototypes</a>
+    <div class="app-name">Growing Season Planner <span class="synthetic">Simulated</span></div>
+    <nav class="modes" aria-label="Planners">
+      <button class="mode" type="button" data-tab="plant">Planting date</button>
+      <button class="mode" type="button" data-tab="panels">Solar panels</button>
+      <button class="mode" type="button" data-tab="bees">Pollinators</button>
+      <button class="mode" type="button" data-tab="rotation">Rotation</button>
+    </nav>
+  </header>
+  <div class="layout" id="view"></div>
+  <footer>A Stellar Grove prototype for planning, not agronomic advice. Every tab runs on Songrove Botanicals'
+    <a href="https://research.stellargrove.com/songrove/">synthetic case studies</a>: simulated data with planted truths, calibrated to published
+    values, not field observations. The planting-date weather is a simulated seasonal curve, not a real location's climate. <span id="gen"></span></footer>
+  <script src="data/season.js"></script>
+  <script src="js/plot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

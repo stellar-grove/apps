@@ -57,6 +57,20 @@
    "simulated": false,
    "order": 4,
    "date": "2026-11-23"
+  },
+  {
+   "slug": "growing-season",
+   "url": "/growing-season/",
+   "title": "Growing Season Planner",
+   "summary": "Pick a planting date so maize flowers before the heat, put solar panels over a crop, add bees, or plan an intercrop and cover crop, on Songrove Botanicals' simulated case studies.",
+   "tags": [
+    "Agriculture",
+    "Songrove"
+   ],
+   "status": "Prototype",
+   "simulated": true,
+   "order": 5,
+   "date": "2026-11-23"
   }
  ]
 }
