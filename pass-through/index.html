@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Who Pays? · Price pass-through simulator · Stellar Grove</title>
+  <meta name="description" content="Tariffs, gas prices and mergers: set the shock and see how much reaches the price you pay, from Stellar Grove's economics research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400&display=swap" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../">Stellar Grove <span>·</span> Prototypes</a>
+    <div class="app-name">Who Pays?</div>
+    <nav class="modes" aria-label="Simulators">
+      <button class="mode" type="button" data-tab="tariff">Tariffs</button>
+      <button class="mode" type="button" data-tab="gas">Gas prices</button>
+      <button class="mode" type="button" data-tab="merger">Mergers</button>
+    </nav>
+  </header>
+  <div class="layout" id="view"></div>
+  <footer>A Stellar Grove prototype. Tariffs and gas prices use real data from FRED (BLS import price indexes, Federal Reserve H.10, EIA);
+    the merger market is simulated. Methods from the Stellar Grove research on <a href="https://research.stellargrove.com/econ/tariffs/">tariffs</a>,
+    <a href="https://research.stellargrove.com/econ/gasoline/">gas prices</a> and <a href="https://research.stellargrove.com/econ/merger_sim/">mergers</a>. <span id="gen"></span></footer>
+  <script src="data/passthrough.js"></script>
+  <script src="js/plot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

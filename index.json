@@ -29,6 +29,34 @@
    "simulated": false,
    "order": 2,
    "date": "2026-11-23"
+  },
+  {
+   "slug": "fed-lab",
+   "url": "/fed-lab/",
+   "title": "Fed Policy Lab",
+   "summary": "Write your own monetary policy rule and see where it would have set interest rates since 1990, then ask the yield curve how likely a recession is at any horizon.",
+   "tags": [
+    "Economics",
+    "Monetary policy"
+   ],
+   "status": "Prototype",
+   "simulated": false,
+   "order": 3,
+   "date": "2026-11-23"
+  },
+  {
+   "slug": "pass-through",
+   "url": "/pass-through/",
+   "title": "Who Pays?",
+   "summary": "Set a tariff, move the price of crude or merge two rivals, and see how much reaches the price you pay, from Stellar Grove's research on tariffs, gas prices and mergers.",
+   "tags": [
+    "Economics",
+    "Prices"
+   ],
+   "status": "Prototype",
+   "simulated": false,
+   "order": 4,
+   "date": "2026-11-23"
   }
  ]
 }

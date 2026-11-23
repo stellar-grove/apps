@@ -1,0 +1,1 @@
+window.PT = {"built":"2026-11-23","merger":{"seed":20261121,"firms":["Ardent","Brio","Cobalt","Dune","Ember","Flint"],"delta":[3.0,2.8,2.2,1.9,1.6,1.2],"cost":[22.0,21.0,19.0,18.0,17.0,16.0],"alpha":0.09,"alphaOls":0.08038,"alphaIv":0.08984,"alphaIvCi":[0.08681,0.09287],"marketSize":100000,"merge":[0,1]}};

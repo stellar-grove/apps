@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fed Policy Lab · Stellar Grove</title>
+  <meta name="description" content="Set your own monetary policy rule and see where it would have put interest rates since 1990, and how much the yield curve says about the next recession." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400&display=swap" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../">Stellar Grove <span>·</span> Prototypes</a>
+    <div class="app-name">Fed Policy Lab</div>
+    <nav class="modes" aria-label="Lab tools">
+      <button class="mode" type="button" data-tab="rules">Policy rules</button>
+      <button class="mode" type="button" data-tab="curve">Recession signal</button>
+    </nav>
+  </header>
+  <div class="layout" id="view"></div>
+  <footer>A Stellar Grove prototype on real data from FRED (Federal Reserve, BEA, BLS, CBO, University of Michigan, U.S. Treasury, NBER).
+    Methods follow the Stellar Grove research on <a href="https://research.stellargrove.com/econ/fed/">the Fed and inflation</a> and
+    <a href="https://research.stellargrove.com/econ/yield_curve/">the yield curve</a>. Not investment advice. <span id="gen"></span></footer>
+  <script src="data/fed.js"></script>
+  <script src="js/plot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -101,7 +101,7 @@ class Plot {
     for (const v of xt) {
       const x = Math.round(this.sx(v)) + 0.5; if (x < b.l - 1 || x > b.r + 1) continue;
       ctx.beginPath(); ctx.moveTo(x, b.t); ctx.lineTo(x, b.b); ctx.stroke();
-      ctx.fillText(s.x.plain ? String(v) : fmtNum(v, s.x.decimals), x, b.b + 14);
+      ctx.fillText(s.x.labels && s.x.labels[v] != null ? s.x.labels[v] : s.x.plain ? String(v) : fmtNum(v, s.x.decimals), x, b.b + 14);
     }
     ctx.strokeStyle = SG.line; ctx.beginPath(); ctx.moveTo(b.l, b.b + 0.5); ctx.lineTo(b.r, b.b + 0.5); ctx.stroke();
     ctx.fillStyle = SG.ink; ctx.font = "600 12px Montserrat, system-ui, sans-serif";
@@ -111,6 +111,10 @@ class Plot {
     }
 
     ctx.save(); ctx.beginPath(); ctx.rect(b.l, b.t, b.r - b.l, b.b - b.t); ctx.clip();
+    for (const band of s.bands || []) {  // shaded x-ranges, e.g. recessions
+      ctx.fillStyle = band.color || "rgba(6,47,79,.08)";
+      ctx.fillRect(this.sx(band.x0), b.t, this.sx(band.x1) - this.sx(band.x0), b.b - b.t);
+    }
     for (const L of s.layers || []) this.layer(L);
     for (const v of s.vlines || []) this.ref("v", v);
     for (const v of s.hlines || []) this.ref("h", v);
@@ -231,7 +235,7 @@ class Plot {
         let lo = 0, hi = L.x.length - 1;
         while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (L.x[mid] < xv) lo = mid; else hi = mid; }
         const i = Math.abs(L.x[lo] - xv) <= Math.abs(L.x[hi] - xv) ? lo : hi;
-        if (gx == null) { gx = L.x[i]; lines.push([s.x.hoverLabel || s.x.label || "x", s.x.plain ? String(L.x[i]) : fmtNum(L.x[i], s.x.hoverDecimals)]); }
+        if (gx == null) { gx = L.x[i]; lines.push([s.x.hoverLabel || s.x.label || "x", s.x.labels && s.x.labels[L.x[i]] != null ? s.x.labels[L.x[i]] : s.x.plain ? String(L.x[i]) : fmtNum(L.x[i], s.x.hoverDecimals)]); }
         lines.push([L.name, fmtNum(L.y[i], s.y.hoverDecimals) + (s.y.unit || ""), L.color || SG.series[0]]);
         if (L.kind !== "bars") {
           ctx.beginPath(); ctx.arc(this.sx(L.x[i]), this.sy(L.y[i]), 4, 0, Math.PI * 2);
