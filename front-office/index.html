@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Front Office Workbench · Stellar Grove</title>
+  <meta name="description" content="Grade any MLB regular against players at his own position and value a contract with an aging curve, from public Statcast data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400&display=swap" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../">Stellar Grove <span>·</span> Prototypes</a>
+    <div class="app-name">Front Office Workbench</div>
+    <nav class="modes" aria-label="Workbench tools">
+      <button class="mode on" type="button" data-tab="player">Player analysis</button>
+      <button class="mode" type="button" data-tab="contract">Contract value</button>
+      <button class="mode" type="button" data-tab="win">Win value</button>
+      <button class="mode" type="button" data-tab="tickets">Ticket pricing</button>
+    </nav>
+  </header>
+  <div class="layout" id="contractView" hidden></div>
+  <div class="layout" id="winView" hidden></div>
+  <div class="layout" id="ticketView" hidden></div>
+  <div class="layout" id="playerView">
+    <aside class="picker" aria-label="Choose a player">
+      <div class="lbl">Position</div>
+      <div class="pos" id="pos"></div>
+      <div class="row2">
+        <label class="sel"><span class="lbl">Season</span><select id="season"></select></label>
+        <label class="sel"><span class="lbl">Rank by</span><select id="sort"></select></label>
+      </div>
+      <input type="search" id="q" placeholder="Search players" aria-label="Search players" />
+      <div class="count" id="count"></div>
+      <ol class="list" id="list"></ol>
+    </aside>
+    <main class="card" id="card" aria-live="polite"></main>
+  </div>
+  <section class="compare" id="compare" hidden></section>
+  <footer>A Stellar Grove prototype built on public data: Statcast and leaderboards via Baseball Savant, and the MLB Stats API.
+    Stuff+ and framing are Stellar Grove models (<a href="https://research.stellargrove.com/#baseball">research</a>). Not affiliated with
+    or endorsed by MLB. <span id="gen"></span></footer>
+  <script src="data/players.js"></script>
+  <script src="data/aging.js"></script>
+  <script src="data/wins.js"></script>
+  <script src="data/tickets.js"></script>
+  <script src="js/plot.js"></script>
+  <script src="js/contract.js"></script>
+  <script src="js/winvalue.js"></script>
+  <script src="js/tickets.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

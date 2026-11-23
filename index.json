@@ -15,6 +15,20 @@
    "simulated": false,
    "order": 1,
    "date": "2026-11-23"
+  },
+  {
+   "slug": "front-office",
+   "url": "/front-office/",
+   "title": "Front Office Workbench",
+   "summary": "A front office in your browser: grade any MLB regular against his position, value a contract with an aging curve, see what wins are worth at the gate, and price every seat in a simulated ballpark.",
+   "tags": [
+    "Baseball",
+    "Player evaluation"
+   ],
+   "status": "Prototype",
+   "simulated": false,
+   "order": 2,
+   "date": "2026-11-23"
   }
  ]
 }
