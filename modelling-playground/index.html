@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelling Playground · Stellar Grove</title>
+  <meta name="description" content="Change the models themselves: chaos, predators and prey, competition, extinction risk, queues and fisheries, with phase planes you can click." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@300;400&display=swap" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="../">Stellar Grove <span>·</span> Prototypes</a>
+    <div class="app-name">Modelling Playground</div>
+  </header>
+  <div class="layout">
+    <nav class="models" id="models" aria-label="Models"></nav>
+    <main class="stage">
+      <div class="head"><div class="kicker" id="kicker"></div><h1 id="title"></h1><p id="question"></p></div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Views"></div>
+      <div class="chart-wrap"><canvas id="chart" role="img" aria-label="Model chart"></canvas></div>
+      <div class="stats" id="stats" aria-live="polite"></div>
+    </main>
+    <aside class="panel" aria-label="Controls">
+      <h2>Parameters <button class="reset" id="reset" type="button">reset</button></h2>
+      <div id="params"></div>
+      <h3>Try a scenario</h3>
+      <div class="presets" id="presets"></div>
+      <div id="actions"></div>
+      <p class="hint" id="hint"></p>
+      <a class="explainer" id="explainer" href="https://research.stellargrove.com/explainers/">Read the worked explainer →</a>
+    </aside>
+  </div>
+  <footer>A Stellar Grove prototype. Models rebuilt from the topics of Mike Mesterton-Gibbons, <em>A Concrete Approach to
+    Mathematical Modelling</em>, with our own scenarios and numbers. <a href="https://research.stellargrove.com/explainers/">All explainers</a></footer>
+  <script src="js/plot.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

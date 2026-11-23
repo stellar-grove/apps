@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototypes · Stellar Grove</title>
+<meta name="description" content="Working prototypes from Stellar Grove that you can try in your browser.">
+<link rel="canonical" href="https://apps.stellargrove.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@300;400&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f6f8f8;color:#0d1c24;font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif}
+a{color:inherit}
+.top{background:#062f4f;color:#fff}
+.top .in{max-width:1080px;margin:0 auto;padding:.85rem 1.25rem;display:flex;gap:.4rem 1rem;align-items:baseline;
+  justify-content:space-between;flex-wrap:wrap}
+.brand{font-family:'Roboto Slab',Georgia,serif;font-weight:300;font-size:1.25rem;color:#fff;text-decoration:none}
+.brand span{color:#f2d15c}
+.nav a{color:#d5dee3;text-decoration:none;font-size:.9rem;margin-right:1.1rem}
+.nav a:last-child{margin-right:0}
+.hero{background:linear-gradient(160deg,#062f4f 0%,#0b3d63 70%,#0d4a3a 100%);color:#fff}
+.hero .in{max-width:1080px;margin:0 auto;padding:3rem 1.25rem 3.25rem}
+.hero h1{font-family:'Roboto Slab',Georgia,serif;font-weight:300;font-size:2.4rem;margin:0 0 .6rem}
+.hero p{margin:0;max-width:640px;line-height:1.65;color:#d5dee3}
+main{max-width:1080px;margin:-1.75rem auto 0;padding:0 1.25rem 3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
+.tile{display:flex;flex-direction:column;background:#fff;border:1px solid #d5dee3;border-radius:12px;overflow:hidden;
+  text-decoration:none;transition:transform .2s,box-shadow .2s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(6,47,79,.14)}
+.tile .bar{height:5px;background:linear-gradient(90deg,#0d7a3c,#f2d15c)}
+.tile .body{padding:1.2rem 1.25rem 1.1rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.tile h2{font-family:'Roboto Slab',Georgia,serif;font-weight:400;font-size:1.3rem;color:#062f4f;margin:0}
+.tile p{margin:0;font-size:.9rem;line-height:1.6;color:#2e4250;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-size:.72rem;font-weight:600;border-radius:999px;padding:.15rem .6rem;background:#eef2f1;color:#062f4f}
+.tag.st{background:#062f4f;color:#f2d15c}
+.tag.sim{background:#f8e9c2;color:#6b5208}
+.go{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;font-weight:600;color:#0d7a3c;
+  border-top:1px solid #eef2f1;padding:.8rem 1.25rem}
+.go span{transition:transform .2s}
+.tile:hover .go span{transform:translateX(4px)}
+.empty{background:#fff;border:1px dashed #9fb6c6;border-radius:12px;padding:1.2rem;color:#4a5e6d;display:flex;
+  align-items:center;justify-content:center;text-align:center;min-height:180px;font-size:.9rem}
+footer{border-top:1px solid #d5dee3;color:#4a5e6d;font-size:.85rem}
+footer .in{max-width:1080px;margin:0 auto;padding:1.25rem}
+footer a{color:#0d7a3c}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+<a class="brand" href="/">Stellar Grove <span>·</span> Prototypes</a>
+<nav class="nav"><a href="https://research.stellargrove.com/">Research</a><a href="https://www.stellargrove.com">stellargrove.com</a></nav>
+</div></header>
+<section class="hero"><div class="in"><h1>Prototypes</h1>
+<p>Working apps you can drive in your browser. They run on synthetic or public data, so click around freely.</p>
+</div></section>
+<main><div class="grid">
+<a class="tile" href="/modelling-playground/"><span class="bar"></span><span class="body"><span class="tags"><span class="tag st">Prototype</span><span class="tag">Mathematical modelling</span><span class="tag">Interactive</span></span><h2>Modelling Playground</h2><p>Change the models themselves: drive a population into chaos, click a phase plane to release predators and prey, and simulate colonies going extinct.</p></span><span class="go">Open the app <span aria-hidden="true">→</span></span></a><div class="empty">More prototypes on the way.</div>
+</div></main>
+<footer><div class="in">© 2026 Stellar Grove · <a href="https://www.stellargrove.com">stellargrove.com</a> ·
+<a href="https://research.stellargrove.com/">research</a></div></footer>
+</body>
+</html>

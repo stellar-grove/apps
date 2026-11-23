@@ -1,0 +1,20 @@
+{
+ "site": "https://apps.stellargrove.com",
+ "updated": "2026-11-23",
+ "apps": [
+  {
+   "slug": "modelling-playground",
+   "url": "/modelling-playground/",
+   "title": "Modelling Playground",
+   "summary": "Change the models themselves: drive a population into chaos, click a phase plane to release predators and prey, and simulate colonies going extinct.",
+   "tags": [
+    "Mathematical modelling",
+    "Interactive"
+   ],
+   "status": "Prototype",
+   "simulated": false,
+   "order": 1,
+   "date": "2026-11-23"
+  }
+ ]
+}
