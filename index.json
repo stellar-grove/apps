@@ -1,6 +1,6 @@
 {
  "site": "https://apps.stellargrove.com",
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "apps": [
   {
    "slug": "modelling-playground",
@@ -41,6 +41,21 @@
    ],
    "status": "Prototype",
    "simulated": false,
+   "order": 3,
+   "date": "2026-11-23"
+  },
+  {
+   "slug": "command-center",
+   "url": "/command-center/",
+   "title": "Hospital Command Center",
+   "summary": "Run a fictional 500-bed health system hour by hour: census by unit and site, Monte Carlo forecasts, weather and surge scenarios, early-warning monitoring of simulated patients, and unit-level finance.",
+   "tags": [
+    "Healthcare operations",
+    "Simulation",
+    "Finance"
+   ],
+   "status": "Prototype",
+   "simulated": true,
    "order": 3,
    "date": "2026-11-23"
   },

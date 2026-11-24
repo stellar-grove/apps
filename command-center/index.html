@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital Command Center · Stellar Grove</title>
+  <meta name="description" content="A live hospital command-center prototype: census by unit and site, Monte Carlo forecasts, weather and surge scenarios, early-warning monitoring and unit-level finance, on a fictional simulated health system." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    try { const t = localStorage.getItem("cbcc-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
+        </div>
+        <div><div class="brand-name">Command Center</div><div class="brand-sub">Calloway Bay Health</div></div>
+      </div>
+      <div class="clock-card">
+        <div class="clock-top"><span class="live-dot" id="liveDot"></span><span id="clockDate"></span><span class="status-pill ok" id="statusPill">Normal</span></div>
+        <div class="clock-time" id="clockTime">06:00</div>
+        <div class="clock-ctl">
+          <button class="icon-btn play" id="playBtn" aria-label="Play">▶</button>
+          <button class="icon-btn" id="stepBtn" title="Advance one hour (n)">+1h</button>
+          <button class="icon-btn" id="dayBtn" title="Advance one day">+1d</button>
+          <button class="icon-btn" id="resetBtn" title="Restart the simulation">↺</button>
+        </div>
+        <div class="seg speed" id="speedSeg"></div>
+      </div>
+      <div><div class="nav-label">Operations</div><nav class="nav" id="navMain"></nav></div>
+      <div><div class="nav-label">Planning</div><nav class="nav" id="navPlan"></nav></div>
+      <div><div class="nav-label">Sites</div><nav class="nav" id="navSites"></nav></div>
+      <div><div class="nav-label">Data</div><nav class="nav" id="navData"></nav></div>
+      <div><div class="nav-label">Reference</div><nav class="nav" id="navRef"></nav></div>
+      <div class="sidebar-foot">A Stellar Grove prototype. Fictional health system · simulated patients, weather and money.<br><a href="https://research.stellargrove.com/hospital/command_center/">The research behind it →</a><br><a href="https://apps.stellargrove.com/">More prototypes →</a></div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+        <div class="crumbs" id="crumbs"></div>
+        <div class="spacer"></div>
+        <button class="btn small tour-btn" id="tourBtn">Take the tour</button>
+        <button class="btn small" id="shareBtn" title="Copy a link to this exact moment">Share</button>
+        <span class="badge-synth">Simulated · fictional system</span>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle light and dark mode" title="Light / dark">◐</button>
+      </header>
+      <main class="content" id="view"></main>
+    </div>
+  </div>
+  <script src="data/system.js"></script>
+  <script src="js/sim.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/live.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/pages2.js"></script>
+  <script src="js/pages3.js"></script>
+  <script src="js/tour.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
